@@ -1,0 +1,175 @@
+<html>
+	
+	<head>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+
+  .activeblog_div{
+    padding:10px;background: #fff;
+          padding: 10px;border-bottom:1px solid #ccc;
+}
+.activeblog_text{
+    padding:10px;background: #fff;
+        padding: 10px;border-bottom:1px solid #ccc;
+}
+.first_div{
+    padding:10px;margin-top: 35px;background: #fff;
+        padding: 10px;border-bottom:1px solid #ccc;
+}
+.activesearch .search{
+    z-index: 1;
+    height: 25px;
+    border-radius: 0px;
+}
+.activesearch .search_icon{
+    padding: 3px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+.active_left{
+    margin-top: 30%;
+    font-size: small;
+    color: #8b8e94;
+}
+  
+
+</style>
+
+	</head>
+	<body style="background-color:#cdcdd0;" onload="list()">
+		    
+<div class="col-md-12 topnav actnav">
+       <div class="col-md-1">
+        <img src="images/fb.png" style=" width: 37px;float: right;">    
+
+       </div>
+       <div class="col-md-2 search">
+         <input type="text" placeholder="Search.." name="search">
+      <i class="fa fa-search"></i>
+       </div>
+       <div class="col-md-1">
+           <img src="images/profilepic.png" alt="Banner image" style="width: 48px; border-radius: 50%;float: right;margin-top:-3px">
+       </div>
+       <div class="col-md-2">
+        <p>Rasathi vijayan</p>
+       </div>
+       <div class="col-md-1">
+        <p>Home</p>
+       </div>
+       <div class="col-md-1">
+        <p>Find Friends</p>
+       </div>
+       <div class="col-md-1">
+        <p>Create</p>
+       </div>
+       <div class="col-md-1">
+        <p>Activity Log</p>
+       </div>
+       <div class="col-md-1">
+        <p onclick="logout()">Logout</p>
+       </div>
+        <div class="col-md-1">
+       </div>
+ </div>
+
+ <div class="container">
+      <div class="col-md-2">
+  
+      </div>
+      <div class="col-md-8">
+              <div class="col-md-12 first_div" >
+              <div class="col-md-8">
+                <img src="images/logo.png" style="width:35px;"> &nbsp;
+                
+                <b style="color:#3b5998">Active Log</b>
+              </div>
+                
+                <div class="form-group col-md-4" style="margin-bottom: 0px;">
+                  <div class="input-group">
+                      <input type="text" class="form-control search"
+                             placeholder="Search" id="inputGroup"/>
+                      <span class="input-group-addon search_icon">
+                          <i class="fa fa-search"></i>
+                      </span>
+                  </div>
+              </div>
+              </div>
+
+                <div id="logcontents"></div>
+            
+                
+      </div>
+
+      
+    </div>
+
+<script>
+$(document).ready(function(){
+    $(".div2,.div3").hide();
+    $(".p1").click(function(){
+        $(".div1").show();
+        $(".div2").hide();
+        $(".div3").hide();
+    })
+    $(".p2").click(function(){
+        $(".div2").show();
+        $(".div1").hide();
+        $(".div3").hide();
+    })
+    $(".p3").click(function(){
+        $(".div3").show();
+        $(".div1").hide();
+        $(".div2").hide();
+    })
+});
+
+function list()
+{
+  var activityslist =JSON.parse(localStorage.getItem('ActivityLog'));
+  for(var i=0; i<activityslist.length;i++){
+    var result=activityslist[i];
+    $('#logcontents').append('<div class="col-md-12 activeblog_div"><b>'+result.cdate+'</b></div><div class="col-md-12 activeblog_div" >'+
+     '<div class="col-md-4"><div class="media-left"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yv/r/dOJFaVZihS_.png" class="media-object">'+
+      '</div><div class="media-body"><p>'+result.Title+'</p></div></div><div  class="col-md-3"><img src="images/profilepic.png" style="width:150px;height:150px;"> '+
+      '</div> <div class="col-md-5"><div class="media-body"><p>'+result.Datetimes+'<a href=""><i class="fa fa-pencil" aria-hidden="true" style="float:right;"></i></a></p>'+
+      '</div></div></div>');
+  }
+
+
+}
+
+function logout(){
+        var today = new Date();
+		    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();   
+		    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var datetime = date +' - '+time;
+        var getactivity=  JSON.parse(localStorage.getItem('ActivityLog'));
+        if(getactivity == null){
+          getactivity=[];
+        }
+        var datas={Title:'Logout',Datetimes:datetime,cdate:date};
+        getactivity.push(datas);
+            localStorage.setItem('ActivityLog',JSON.stringify(getactivity));
+        sessionStorage.removeItem("usersDetails");
+        sessionStorage.clear();
+        document.location.href = "Loginpage.html";
+        
+      }
+</script>
+
+
+
+
+</body>
+</html>

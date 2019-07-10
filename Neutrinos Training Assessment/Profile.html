@@ -1,0 +1,216 @@
+<html>
+    
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="Js/script.js"></script>
+        <script src="Js/bootstrap.min.js"></script>
+       
+    </head>
+
+
+<main>
+        
+        <header>
+            <div class="tb">
+                <div class="td" id="logo">
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                </div>
+                <div class="td" id="search-form">
+                    <form method="get" action="#">
+                        <input type="text" placeholder="Search Facebook">
+                        <button type="submit"><i class="material-icons"></i></button>
+                    </form>
+                </div>
+                <div class="td" id="f-name-l"><span class="uname">Rasathivijayan</span></div>
+                <div class="td" id="i-links">
+                    <div class="tb">
+                        <div class="td" id="m-td">
+                            <div class="tb">
+                                <!-- <span class="td"><i class="material-icons">Home</i></span>
+                                <span class="td"><i class="material-icons">Find Friends</i></span>
+                                <span class="td m-active"><i class="material-icons">Activity Log</i></span> -->
+                            </div>
+                        </div>
+                        <div class="td">
+                            <a href="#" id="p-link">
+                                <img src="images/profilepic.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="profile-upper">
+            <div id="profile-banner-image">
+                <img src="images/coverpic1.jpg">
+            </div>
+            <div id="profile-d">
+                <div id="profile-pic">
+                    <img src="images/profilepic.png">    
+                </div>
+                <div id="u-name">Rasathivijayan</div>
+                <div class="tb" id="m-btns">
+                    <!-- <div class="td">
+                        <div class="m-btn"><i class="material-icons">format_list_bulleted</i><span>Activity log</span></div>
+                    </div> -->
+                    <!-- <div class="td">
+                        <div class="m-btn"><i class="material-icons">lock</i><span>Privacy</span></div>
+                    </div> -->
+                </div>
+<!--                 <div id="edit-profile"><i class="material-icons">camera_alt</i></div>
+ -->            </div>
+            <div id="black-grd"></div>
+        </div>
+        <div id="main-content">
+            <div class="tb">
+                <div class="td" id="l-col">                   
+                    <div class="l-cnt">
+                        <div class="cnt-label">
+                            <i class="l-i" id="l-i-i"></i>
+                            <span>Intro</span>
+                            <span style="float:right"><div class="eidtaction" onClick ="editicon()"><i class="fa fa-edit" aria-hidden="true"></i></div></span>
+                        </div>
+                        <div id="i-box">
+                            <div id="intro-line" ><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                <span class="graduationdetails"></span>
+                            </div><br>
+
+                            <div id="intro-line1" ><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                              <span class="college"></span>
+                            </div><br>
+
+                            <div id="intro-line2" ><i class="fa fa-heart" aria-hidden="true"></i>
+                            <span class="currentjobrole"></span>
+                            </div><br>
+                             <div id="intro-line2" ><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span class="currentorganization"></span>
+                            </div><br>
+
+                            <div id="intro-line2" ><i class="fa fa-map-marker" aria-hidden="true"></i>
+                             <span class="currentcity"></span>
+                             </div><br>
+
+                            <div id="intro-line2" ><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span class="native"></span>
+                            </div><br>
+                           
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="l-cnt l-mrg">
+                        <div class="cnt-label">
+                            <i class="l-i" id="l-i-p"></i>
+                            <span>Photos</span>
+                        </div>
+                        <div id="photos">
+                            <div class="tb">
+                                <div class="tr">
+                                    <div class="td"></div>
+                                    <div class="td"></div>
+                                    <div class="td"></div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td"></div>
+                                    <div class="td"></div>
+                                    <div class="td"></div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td"></div>
+                                    <div class="td"></div>
+                                    <div class="td"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-cnt l-mrg" >
+                        <div class="cnt-label">
+                            <i class="l-i" id="l-i-k"></i>
+                            <span>Did You Know<i id="k-nm">1</i></span>
+                        </div>
+                        <div>
+                            <div class="q-ad-c">
+                                <a href="#" class="q-ad">
+                                    <img src="https://imagizer.imageshack.com/img923/1849/4TnLy1.png">
+                                    <span>My favorite superhero is...</span>
+                                </a>
+                            </div>
+                            <div class="q-ad-c">
+                                <a href="#" class="q-ad" id="add_q">
+                                    <i class="material-icons">add</i>
+                                    <span>Add Answer</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="td" id="m-col">
+                    <div class="m-mrg" id="p-tabs">
+                        <div class="tb">
+                            <div class="td">
+                                <div class="tb" id="p-tabs-m">
+                                    <div class="td"><span>TIMELINE</span></div>
+                                    <div class="td"><span>FRIENDS</span></div>
+                                    <div class="td"><span>PHOTOS</span></div>
+                                    <div class="td"><span>ABOUT</span></div>
+                                    <div class="td"><span>ARCHIVE</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-mrg" id="composer">
+                        <div id="c-tabs-cvr">
+                            <div class="tb" id="c-tabs">
+                                <div class="td active"><span>Make Post</span></div>
+                                <div class="td"><span>Photo/Video</span></div>
+                                <div class="td"><span>Live Video</span></div>
+                                <div class="td"><span>Life Event</span></div>
+                            </div>
+                        </div>
+                        <div id="c-c-main">
+                            <div class="tb">
+                                <div class="td" id="p-c-i"><img src="images/profilepic.png" alt="Profile pic"></div>
+                                <div class="td" id="c-inp">
+                                    <input type="text" placeholder="What's on your mind?">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="post">
+                            <div class="tb">
+                                <a href="#" class="td p-p-pic"><img src="https://imagizer.imageshack.com/img923/2452/zifFKH.jpg" alt="Rajeev's profile pic"></a>
+                                <div class="td p-r-hdr">
+                                    <div class="p-u-info">
+                                        <a href="#">Karthick Jagadeshwaren</a> shared a memory with <a href="#">Rasathi vijayan</a> 
+                                    </div>
+                                    <div class="p-dt">
+                                        <i class="material-icons">calendar_today</i>
+                                        <span>January 28, 2015</span>
+                                    </div>
+                                </div>
+<!--                                 <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+ -->                            </div>
+                            <a href="#" class="p-cnt-v">
+                                <img src="images/facebookimage1.jpg">
+                            </a>
+                            <div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="td" id="r-col">
+                    <div id="chat-bar">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    </body>
+    </html>
